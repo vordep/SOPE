@@ -1,0 +1,74 @@
+gerador.txt 
+
+inicialização
+	|
+	|
+	| * /// LINHA 19
+	|
+	|
+	|
+Terminação
+
+/***  LIGAR A DURATION // porque é que o prof fez isto 
+tp5 = sysconf(_SC_CLK_TCK);
+UT =  (double )atoi(argv[2])/tp5;
+
+
+***/
+
+*
+double t = 0,0;
+int id =0 ;
+double duration = (double) atoi(argv[i]);
+srand(time(NULL));
+
+While(t<duration){
+	rn = rand()%10;
+	if(rn<3){
+	mysleep(ut);
+	t +=ut;
+	}
+	if(rn<5){
+	mysleep(2*ut);
+	t +=2*ut;
+	}
+	nr = (int * )malloc(sizeof(int));
+	*nr = id++;
+	pthread_create(&tid,NULL,t_vehicle,rn);
+
+
+}
+
+void * t_vehicle(void * arg){
+	pthread_detach(pthread_self());
+	int vid = *(int* ) arg;
+	free (arg);
+	/**
+	gerar caracteristicas do vehicle    // ficheiro à parte para estrutura de veiculo 
+	**/
+
+	/**
+	criar fifo unico para leitura
+	abrir para rn 							//se não se conseguir abrir o fifo , a thread termina logo 
+	**/
+
+				 //fifo a abrir depende da informaçao gerada no veiculo 
+	fd = open ( FIFOPN // define fifo parque norte , O_WRONLY |O_NONBLOCK)
+	if ( fd != -1 ){
+		write(fd, (estrutura vehicle ), sizeof Vehicle )
+		close(fd)
+
+		read() // á espera de mensagens, podem ser do tipo // parque fechado // parque cheio // estacionado
+
+		read()// segundo read dependente da resposta do primeiro, se for estacionado estamos a espera que da resposta para o carro sair 
+
+	}
+	return null ;
+
+}
+
+// funcitons 
+
+logfile 
+create vehicle 
+init_fifo
