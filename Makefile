@@ -1,14 +1,14 @@
 CC = gcc
-CFLAGS = -D_REENTRANT -lpthread -Wall
+CFLAGS = -D_REENTRANT -Wall -pthread
 
-all: Parque Gerador
+all: parque gerador
 
-Parque: Parque.c
-	$(CC) Parque.c -o Parque $(CFLAGS)
+Parque: parque.c
+	$(CC) parque.c -o parque $(CFLAGS)
 
-Gerador: Gerador.c
-	$(CC) Gerador.c -o Gerador $(CFLAGS)
+Gerador: gerador.c
+	$(CC) gerador.c -o gerador $(CFLAGS)
 
 clean:
-	rm Gerador
-	rm Parque
+	rm gerador
+	rm parque

@@ -10,6 +10,7 @@
 #include <time.h>
 #include <string.h>
 #include <pthread.h>
+#include "structs.h"
 /**
 DEFINES AND ASSETS
 **/
@@ -33,7 +34,6 @@ FUNCTIONS DECLARATIONS
 **/
 //controlador 
 //arrumador
-int convert_string_to_int(char * str, int * str); //safely converts a string to int 
 
 int main(int argc, char **argv){
 
@@ -64,19 +64,5 @@ int main(int argc, char **argv){
 	BEGGINING OF THE APPLICATION
 	*/
 
-
-}
-int convert_string_to_int (char * str, int * num ){
-	int i  = 0 ;
-	while(str[i]!='\0'){
-		if(str[i] >= '1' && str[i]<= '9') //making sure the arg passed 
-			break;						  //doesnt start with 0
-		i++;
-	}
-	errno = 0;
-	*num = strtol(str,NULL,10);
-	if(errno != 0)
-		return-1;
-	return 0 ;
 
 }
